@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:75:"D:\phpStudy\WWW\thinkphp_5.0.9_blog/application/admin\view\entry\index.html";i:1497863269;s:68:"D:\phpStudy\WWW\thinkphp_5.0.9_blog/application/admin\view\base.html";i:1497973313;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:75:"D:\phpStudy\WWW\thinkphp_5.0.9_blog/application/admin\view\entry\index.html";i:1497863269;s:68:"D:\phpStudy\WWW\thinkphp_5.0.9_blog/application/admin\view\base.html";i:1498027422;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +29,7 @@
             //上传文件后台地址
             'uploader': "<?php echo url('system/component/uploader'); ?>",
             //获取文件列表的后台地址
-            'filesLists': '?s=home/component/filesLists'
+            'filesLists': "<?php echo url('system/component/filesLists'); ?>?"
         };
     </script>
     <script src="__STATIC__/node_modules/hdjs/app/util.js"></script>

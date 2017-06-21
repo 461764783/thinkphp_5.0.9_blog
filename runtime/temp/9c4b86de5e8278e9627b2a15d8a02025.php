@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:73:"D:\phpStudy\WWW\thinkphp_5.0.9_blog/application/admin\view\tag\store.html";i:1497958320;s:68:"D:\phpStudy\WWW\thinkphp_5.0.9_blog/application/admin\view\base.html";i:1497941718;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:73:"D:\phpStudy\WWW\thinkphp_5.0.9_blog/application/admin\view\tag\store.html";i:1497958320;s:68:"D:\phpStudy\WWW\thinkphp_5.0.9_blog/application/admin\view\base.html";i:1498027422;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,11 +25,11 @@
         //模块配置项
         var hdjs = {
             //框架目录
-            'base': 'node_modules/hdjs',
+            'base': '__STATIC__/node_modules/hdjs',
             //上传文件后台地址
-            'uploader': '?s=home/component/uploader',
+            'uploader': "<?php echo url('system/component/uploader'); ?>",
             //获取文件列表的后台地址
-            'filesLists': '?s=home/component/filesLists',
+            'filesLists': "<?php echo url('system/component/filesLists'); ?>?"
         };
     </script>
     <script src="__STATIC__/node_modules/hdjs/app/util.js"></script>
@@ -133,12 +133,12 @@
                     </a>
                 </div>
                 <div class="list-group menus collapse in" id="collapseExample3">
-                    <a href="" class="list-group-item">
+                    <a href="<?php echo url('admin/article/index'); ?>" class="list-group-item">
                         <i class="fa fa-file-text" aria-hidden="true"></i>
                         <span class="pull-right" href=""></span>
                         文章列表
                     </a>
-                    <a href="" class="list-group-item">
+                    <a href="<?php echo url('admin/article/recycle'); ?>" class="list-group-item">
                         <i class="fa fa-recycle" aria-hidden="true"></i>
                         <span class="pull-right" href=""></span>
                         回收站
@@ -147,14 +147,14 @@
                 <!--文章管理 end-->
 
                 <!--友链管理-->
-                <div class="panel-heading" role="button" data-toggle="collapse" href="#collapseExample4"
+                <div class="panel-heading" role="button" data-toggle="collapse" href="#collapseExample5"
                      aria-expanded="false" aria-controls="collapseExample">
                     <h4 class="panel-title">友链管理</h4>
-                    <a class="panel-collapse" data-toggle="collapse" href="#collapseExample3" aria-expanded="true">
+                    <a class="panel-collapse" data-toggle="collapse" href="#collapseExample5" aria-expanded="true">
                         <i class="fa fa-chevron-circle-down"></i>
                     </a>
                 </div>
-                <div class="list-group menus collapse in" id="collapseExample4">
+                <div class="list-group menus collapse in" id="collapseExample5">
                     <a href="" class="list-group-item">
                         <i class="fa fa-link" aria-hidden="true"></i>
                         <span class="pull-right" href=""></span>
@@ -164,14 +164,14 @@
                 <!--友链管理 end-->
 
                 <!--站点管理-->
-                <div class="panel-heading" role="button" data-toggle="collapse" href="#collapseExample5"
+                <div class="panel-heading" role="button" data-toggle="collapse" href="#collapseExample6"
                      aria-expanded="false" aria-controls="collapseExample">
                     <h4 class="panel-title">站点管理</h4>
-                    <a class="panel-collapse" data-toggle="collapse" href="#collapseExample3" aria-expanded="true">
+                    <a class="panel-collapse" data-toggle="collapse" href="#collapseExample6" aria-expanded="true">
                         <i class="fa fa-chevron-circle-down"></i>
                     </a>
                 </div>
-                <div class="list-group menus collapse in" id="collapseExample5">
+                <div class="list-group menus collapse in" id="collapseExample6">
                     <a href="" class="list-group-item">
                         <i class="fa fa-cog" aria-hidden="true"></i>
                         <span class="pull-right" href=""></span>

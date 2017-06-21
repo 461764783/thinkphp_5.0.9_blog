@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:78:"D:\phpStudy\WWW\thinkphp_5.0.9_blog/application/admin\view\category\index.html";i:1497939920;s:68:"D:\phpStudy\WWW\thinkphp_5.0.9_blog/application/admin\view\base.html";i:1497969032;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:78:"D:\phpStudy\WWW\thinkphp_5.0.9_blog/application/admin\view\category\index.html";i:1497939920;s:68:"D:\phpStudy\WWW\thinkphp_5.0.9_blog/application/admin\view\base.html";i:1498027422;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,11 +25,11 @@
         //模块配置项
         var hdjs = {
             //框架目录
-            'base': 'node_modules/hdjs',
+            'base': '__STATIC__/node_modules/hdjs',
             //上传文件后台地址
-            'uploader': '?s=home/component/uploader',
+            'uploader': "<?php echo url('system/component/uploader'); ?>",
             //获取文件列表的后台地址
-            'filesLists': '?s=home/component/filesLists',
+            'filesLists': "<?php echo url('system/component/filesLists'); ?>?"
         };
     </script>
     <script src="__STATIC__/node_modules/hdjs/app/util.js"></script>
