@@ -1,0 +1,69 @@
+{extend name='base'/}
+{block name='content'}
+<ol class="breadcrumb" style="background-color: #f9f9f9;padding:8px 0;margin-bottom:10px;">
+    <li><a href=""><i class="fa fa-cogs"></i>文章管理</a></li>
+</ol>
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="javascript:;">文章管理</a></li>
+    <li><a href="{:url('store')}">文章添加</a></li>
+</ul>
+<form action="" method="post">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th width="5%">编号</th>
+                        <th>文章名称</th>
+                        <th>文章作者</th>
+                        <th>所属分类</th>
+                        <th>添加时间</th>
+                        <th width="8%">排序</th>
+                        <th width="200">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {foreach name='field' key='key' item='vo'}
+                <tr>
+                    <td>{$vo['arc_id']}</td>
+                    <td>{$vo['arc_title']}</td>
+                    <th>{$vo['arc_author']}</th>
+                    <td>{$vo['cate_name']}</td>
+                    <td>{$vo['sendtime|date="Y-m-d",###']}</td>
+                    <td>
+                        <input type="text" class="form-control" name="arc_sort" onblur="changeSort(this,{$vo['arc_id']})" value="{$vo['arc_sort']}">
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作 <span class="caret"></span></button>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="{:url('edit',['arc_id'=>$vo['arc_id']])}">编辑</a></li>
+                                <li class="divider"></li>
+                                <li><a href="{:url('delToRecycle',['arc_id'=>$vo['arc_id']])}">删除到回收站</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                {/foreach}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>
+<div class="pagination pagination-sm pull-right">
+    {$field->render()}
+</div>
+
+<script>
+    function changeSort(obj,arc_id){
+        var arc_sort = $(obj).val();
+        $.post("{:url('changeSort')}",{'arc_sort':arc_sort,'arc_id':arc_id},function(res){
+            if(res.code){
+                util.message(res.msg,'refresh','success');
+            }else{
+                util.message(res.msg,'back','error');
+            }
+        },'json');
+    }
+</script>
+{/block}
